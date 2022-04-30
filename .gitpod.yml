@@ -2,6 +2,4 @@ tasks:
 - name: Terminal 1
   command: pip install -r requirements.txt
 - name: Terminal 2
-  command: sudo apt install -y libsndfile1 
-- name: Terminal 3
-  command: clear
+  command: sudo apt install -y libsndfile1
