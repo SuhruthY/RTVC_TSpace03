@@ -1,15 +1,8 @@
-import inference as encoder
-from preprocess import *
+from inference import EncoderInference
 
-arr = librosa.load("../data/84-121123-0000.flac")[0]
-print(arr.shape)
 
-arr = preprocess_wav(arr)
-print(arr.shape)
+encoder = EncoderInference()
+encoder.load_model("encoder.pt")
 
-arr = wav_to_mel_spectrogram(arr)
-print(arr.shape)
-
-encoder = encoder.load_model("encoder.pt")
-print(encoder)
-
+tmp = encoder.predict("../data/84-121123-0000.flac")
+print(tmp.shape)
